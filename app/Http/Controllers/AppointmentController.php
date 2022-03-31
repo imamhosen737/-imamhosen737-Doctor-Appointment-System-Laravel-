@@ -106,12 +106,7 @@ class AppointmentController extends Controller
         return redirect()->route('appointment.index');
     }
 
-    public function getDoctor($id)
-    {
-        $dr_data = Doctor::where('department_id', $id)->get();
-        dd($dr_data);
-        // return response()->json($dr_data);
-    }
+   
     public function get_drs(Request $r)
     {
         $list = Doctor::where('department_id', $r->id)->get();
