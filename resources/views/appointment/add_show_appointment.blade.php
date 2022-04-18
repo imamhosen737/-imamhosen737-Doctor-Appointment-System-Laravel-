@@ -167,7 +167,6 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
                     _token: "{{ csrf_token() }}"
                 },
                 success: function(data) {
-                    console.log(data)
                     $('#fee').val(data.fee)
                     $('#total_fee').val(data.fee)
                 }
