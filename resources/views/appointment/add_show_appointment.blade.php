@@ -50,6 +50,7 @@
                     <h5 class="text-success">Patien Information</h5>
                     <div class="row mt-2 mb-2">
                         <div class="col">
+                            <label for="patient_name">Patient Name</label>
                             <input type="text" value="{{ old('patient_name') }}" name="patient_name" id="patient_name" class="form-control"
                                 placeholder="Patien Name">
                         </div>
@@ -58,6 +59,7 @@
                            @enderror
 
                         <div class="col">
+                            <label for="patient_phone">Patient Phone</label>
                             <input type="text" value="{{ old('patient_phone') }}" name="patient_phone" id="patient_phone" class="form-control"
                                 placeholder="Patien Phone">
                         </div>
@@ -69,6 +71,7 @@
                     <h5 class="text-success">Payment</h5>
                     <div class="row mt-2">
                         <div class="col">
+                            <label for="total_fee">Total Fee</label>
                             <input type="text" value="{{ old('total_fee') }}" name="total_fee" id="total_fee" class="form-control"
                                 placeholder="Total Fee">
                         </div>
@@ -76,6 +79,7 @@
                         <span style="color: red">{{ $message }}</span>
                        @enderror
                         <div class="col">
+                            <label for="paid_amount">Paid Amount</label>
                             <input type="text" value="{{ old('paid_amount') }}" name="paid_amount" id="paid_amount" class="form-control"
                                 placeholder="Paid Amount">
                         </div>
@@ -167,8 +171,10 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
                     _token: "{{ csrf_token() }}"
                 },
                 success: function(data) {
+                    // console.log(data)
                     $('#fee').val(data.fee)
                     $('#total_fee').val(data.fee)
+                    // $('#paid_amount').val(data.fee)
                 }
             })
         })

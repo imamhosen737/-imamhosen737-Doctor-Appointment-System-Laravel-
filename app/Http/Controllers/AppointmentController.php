@@ -55,8 +55,14 @@ class AppointmentController extends Controller
         $ap->patient_phone = $request->patient_phone;
         $ap->total_fee = $request->total_fee;
         $ap->paid_amount = $request->paid_amount;
-        $ap->save();
-        return redirect()->route('appointment.index');
+        
+        if ( $ap->total_fee = $request->total_fee == $ap->paid_amount = $request->paid_amount) {
+            $ap->save();
+            return redirect()->route('appointment.index');
+        }else{
+            echo "Payment Should be Equal";
+        }
+       
     }
 
     /**
